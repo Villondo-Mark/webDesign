@@ -1,0 +1,107 @@
+@mixin font {font-family: "myFont", 'sans serif';}
+@mixin myGray {background-color: rgb(122,122,122,.17)}
+
+@font-face {
+  font-family: "myFont";
+  src: url("/fonts/ITCAvantGardeStdBk.otf");
+}
+
+body {color: white; background-color: #010203; @include font; overflow-x: hidden; width: 100%;}
+
+.header {width: 100%; display: float; height: 100px; 
+  @include myGray; margin-top: -11px; margin-left: -10px}
+#logo {width: 300px; height: auto; margin-left: 30px; float: left; 
+  margin-top: 10px}
+.buttonBasic {float: right; text-align: center; margin: 2% 1% 1% 1%; 
+  background-color: #66BE66; 
+  border-radius: 20px; padding: 10px 20px; color: #010203; 
+  a {color: #010203; text-decoration: none;}}
+
+  @media only screen and (max-width: 800px) {
+
+    .header {width: 100%; height: 300px; 
+      @include myGray}
+
+    .buttonBasic  {width: 90%; text-align: center; margin: 1%;
+      border-radius: 20px; padding: 10px 20px; color: #010203; margin: 1% auto;}
+
+      #logo {width: 90%; height: 100px; margin-left: 30px; display: block; 
+        margin-top: 10px; margin-bottom: 30px;}
+  }
+
+//GRIDS
+.aboutMeSection {display: grid; grid-template-columns: repeat(11, 1fr); margin-top: 100px; 
+  grid-template-rows: repeat(15, 1fr);height: 800px; width: 100%;}
+  #aboutMeTitle {grid-column-start: 4; grid-column-end: 12; grid-row-start: 3; grid-row-end: 4}
+#markVillondoImg { grid-column-start: 2; grid-column-end: 4; ; grid-row-start: 3; 
+  grid-row-end: 12; height: 100%; width: auto}
+.aboutMe {grid-column-start: 5; grid-column-end: 11; grid-row-start: 5; grid-row-end: 7}
+#myName {grid-column-start: 2; grid-column-end: 4; grid-row-start: 13; grid-row-end: 14}
+.contactInfo {grid-column-start: 2; grid-column-end: 4; grid-row-start: 14; grid-row-end: 15}
+
+.designPhilosophySection {display: grid; grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(15, 1fr);height: 800px; h4 {grid-column-start: 4; grid-column-end: 12; 
+    grid-row-start: 2; grid-row-end: 3; font-size: 60px; margin-left: 60px;}; @include myGray;}
+    .designPhilosophy {grid-column-start: 5; grid-column-end: 11; grid-row-start: 4; grid-row-end: 6}
+
+    .academicCredentialsSection {display: grid; grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(15, 1fr);height: 800px; h4 {grid-column-start: 4; grid-column-end: 12; 
+    grid-row-start: 3; grid-row-end: 4; font-size: 60px; margin-left: 60px}; 
+  
+    .academicCredentials {grid-column-start: 5; grid-column-end: 11; grid-row-start: 5; grid-row-end: 7}
+  
+  }
+
+//CONTENT
+
+#aboutMeTitle {font-size: 60px; margin-left: 60px}
+#markVillondoImg {margin: auto}
+#myName {font-size: 40px;text-align: center}
+.contactInfo {text-align: center}
+.designPhilosophy, .aboutMe, .academicCredentials {font-size: 20px; line-height: 1.5}
+#linkContainer {a {color: #010203; text-decoration: none}; 
+background-color: #66BE66; padding: 5px; border-radius: 15px; font-size: 20px}
+
+//FOOTER
+
+footer {width: 100%; position: absolute; left: 0; text-align: center; @include myGray;
+img {width: auto; height: 40px}; ul {list-style: none}; ul li a {color: white; text-decoration: none}}
+
+
+@media only screen and (max-width: 800px) {
+
+  .aboutMeSection, .designPhilosophySection, .academicCredentialsSection {padding: 0% 3%; width: 90%;}
+
+  .aboutMe, .designPhilosophy, .academicCredentials {text-align: justify;}
+
+  .aboutMeSection {display: grid; grid-template-columns: 1fr; margin-top: 50px; 
+    grid-template-rows: repeat(15, 1fr);height: 1500px; margin-bottom: 50px;}
+    #aboutMeTitle {grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 2}
+  #markVillondoImg { grid-column-start: 1; grid-column-end: 2; ; grid-row-start: 2; 
+    grid-row-end: 5; height: 100%; width: auto}
+  .aboutMe {grid-column-start: 1; grid-column-end: 2; grid-row-start: 7; grid-row-end: 16}
+  #myName {grid-column-start: 1; grid-column-end: 2; grid-row-start: 5; grid-row-end: 6}
+  .contactInfo {grid-column-start: 1; grid-column-end: 2; grid-row-start: 6; grid-row-end: 7}
+
+  .designPhilosophySection {display: grid; grid-template-columns: 1fr; margin-top: 50px; 
+    grid-template-rows: repeat(15, 1fr);height: 1400px; background-color: #010203;
+    h4 {grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 4}; 
+    text-align: left}
+  .designPhilosophy {grid-column-start: 1; grid-column-end: 2; 
+    grid-row-start: 4; grid-row-end: 16}
+
+    .designPhilosophySection {display: grid; grid-template-columns: 1fr; margin-top: 50px; 
+      grid-template-rows: repeat(15, 1fr);height: 1200px; 
+      h4 {grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 2; margin-top: 50px;}}
+    .designPhilosophy {grid-column-start: 1; grid-column-end: 2; 
+      grid-row-start: 3; grid-row-end: 16}
+
+      .academicCredentialsSection {display: grid; grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 1fr);height: 700px; ; margin-bottom: 100px;
+        h4 {text-align: center; grid-column-start: 1; grid-column-end: 3; 
+          grid-row-start: 3; grid-row-end: 4;}}
+      .academicCredentials {grid-column-start: 1; grid-column-end: 2; 
+        grid-row-start: 2; grid-row-end: 4}  
+  
+
+}

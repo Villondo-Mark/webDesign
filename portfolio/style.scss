@@ -1,0 +1,68 @@
+
+
+@font-face {
+  font-family: "myFont";
+  src: url("/fonts/ITCAvantGardeStdBk.otf");
+}
+
+@mixin font {font-family: "myFont", sans serif;}
+@mixin myGray {background-color: rgb(122,122,122,.17)}
+
+body {color: white; background-color: #010203; @include font; overflow-x: hidden}
+
+.header {width: 101%; display: float; height: 100px; 
+  @include myGray; margin-top: -11px; margin-left: -10px}
+#logo {width: 300px; height: auto; margin-left: 30px; float: left; 
+  margin-top: 10px}
+.buttonBasic {float: right; text-align: center; margin: 2% 1% 1% 1%; 
+  background-color: #66BE66; 
+  border-radius: 20px; padding: 10px 20px; color: #010203; 
+  a {color: #010203; text-decoration: none;}}
+
+  @media only screen and (max-width: 800px) {
+
+    .header {width: 103.5%; height: 300px; 
+      @include myGray}
+
+    .buttonBasic  {width: 90%; text-align: center; margin: 1%;
+      border-radius: 20px; padding: 10px 20px; color: #010203; margin: 1% auto;}
+
+      #logo {width: 90%; height: 100px; margin-left: 30px; display: block; 
+        margin-top: 10px; margin-bottom: 30px;}
+
+  }
+  
+  //FOOTER
+
+footer {width: 100%; position: absolute; left: 0; text-align: center; @include myGray;
+  img {width: auto; height: 40px}; ul {list-style: none}; ul li a {color: white; text-decoration: none}}
+
+  //PORTFOLIO PAGE
+
+#portfolioTitle {text-align: center; margin-top: 150px; font-size: 60px;}
+.examplesSection { width: 100%; text-align: center;
+.example {border-radius: 30px;  @include myGray};
+.example {display: inline;width: 20%;height: 350px;max-height: 350px;
+  object-fit: contain;margin: 1%; min-width: 320px; vertical-align: middle; padding: 1%}}
+#progsUsed {font-size: 20px}
+
+  #portfolioPiecesTitle {font-size: 60px; text-align: center}
+
+
+.portfolioSection {width: 60%; h4 {text-align: center} margin: auto; margin-top: 150px; 
+margin-bottom: 50px; p{text-align: center;}; h2 {text-align: center;}}
+.portfolioWork {margin: auto; .example {width: 100%; height: auto}; 
+p {text-align: justify; font-size: 20px;} h2 {font-size: 40px};
+iframe {width: 100%; height: auto}; ; padding: 4% ; border-radius: 30px;
+margin-top: 20px; @include myGray;}
+#behanceLink {text-decoration: none; color: white; margin: auto;
+  font-size: 30px; text-align: right;}
+  #portfolioExamplesTitles {font-size: 40px}
+
+  @media only screen and (max-width: 800px) {
+
+.portfolioSection {width: 100%;}
+.examplesSection {width: 100%;}
+.example {width: 100%;}
+
+  }
